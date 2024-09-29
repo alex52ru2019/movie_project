@@ -1,0 +1,26 @@
+{% extends 'films/layout.html' %}
+
+
+{% block title %}
+	<title>Зоопарк</title>
+{% endblock %}
+
+{% block content %}
+
+<!--<h1> А вот и {{ caption }}</h1>-->
+<div class="container my-3 mx-2">
+	<p> Инфо о фильмах</p>
+</div>
+{% if films %}
+	{% for film in films %}
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+			    <h5 class="card-title">{{ film.films_name }}</h5>
+			    <p class="card-text">Описание:&nbsp; {{ film.films_text }}</p>
+			    <p class="card-text">Отзыв:&nbsp; {{ film.films_review }}</p>
+		    </div>
+		</div> <br>
+	{% endfor %}
+{% endif %}
+
+{% endblock %}

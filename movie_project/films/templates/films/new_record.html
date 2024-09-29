@@ -1,0 +1,26 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+    <title>Новая запись</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="text-center">Форма для добавления записи</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.films_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.films_text }}
+        </div>
+        <div class="mb-3">
+            {{ form.films_review }}
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+    <p> {{ error }}</p>
+</div>
+{% endblock %}
